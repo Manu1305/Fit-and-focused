@@ -19,7 +19,7 @@ function GoalCard({ label, sublabel, value, max, target, targetPctLabel, passed 
   const targetPct = Math.round((target / max) * 100);
 
   return (
-    <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#161922] p-4">
+    <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/60 dark:bg-white/2 p-4">
       <div className="flex items-start justify-between gap-2">
         <div>
           <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{label}</div>
@@ -35,7 +35,7 @@ function GoalCard({ label, sublabel, value, max, target, targetPctLabel, passed 
                 : 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400'
             }`}
           >
-            {passed ? '✅ On target' : '⚠️ Below target'}
+            {passed ? 'On target' : 'Below target'}
           </span>
         )}
       </div>
@@ -67,15 +67,11 @@ export default function TeamGoal({ stageTotal }) {
   const stagePassed = stageTotal >= STAGE_TARGET;
 
   return (
-    <section className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#161922] p-5">
+    <section className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#161922] shadow-sm p-5 h-full">
       <div className="mb-4">
-        <h2 className="text-base font-semibold text-gray-900 dark:text-gray-100">
-          🎯 Team goal
-        </h2>
+        <h2 className="text-base font-semibold text-gray-900 dark:text-gray-100">Team goal</h2>
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-          Combined score across all 4 players. The target rises each round —{' '}
-          {ROUND_TARGETS_PCT.map((pct, i) => `R${i + 1}: ${pct}%`).join(', ')} — averaging{' '}
-          {OVERALL_TARGET_PCT}% overall.
+          Combined score across all 4 players — the target rises every round.
         </p>
       </div>
 

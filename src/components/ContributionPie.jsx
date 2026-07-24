@@ -5,16 +5,16 @@ export default function ContributionPie({ rows }) {
   const teamTotal = rows.reduce((sum, r) => sum + r.total, 0);
 
   return (
-    <section className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#161922] p-5">
+    <section className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#161922] shadow-sm p-5 h-full">
       <h2 className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-1">
-        🥧 Contribution to team score
+        Contribution to team score
       </h2>
       <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
         Each player's share of the {teamTotal} pt combined total in {STAGE_NAME.toLowerCase()}.
       </p>
 
-      <div className="flex flex-col sm:flex-row items-center gap-4">
-        <div className="w-full sm:w-56 h-56 shrink-0">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-full max-w-56 h-56 shrink-0">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -42,7 +42,7 @@ export default function ContributionPie({ rows }) {
           </ResponsiveContainer>
         </div>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-1 gap-2">
+        <div className="w-full grid grid-cols-2 gap-2">
           {rows.map((row) => {
             const pct = teamTotal ? Math.round((row.total / teamTotal) * 100) : 0;
             return (
