@@ -26,6 +26,17 @@ body {
   min-height: 100svh;
 }
 
+.tint-card {
+  background-color: var(--tint-bg, #fff);
+  border-color: var(--tint-border, #e5e7eb);
+}
+@media (prefers-color-scheme: dark) {
+  .tint-card {
+    background-color: #161922;
+    border-color: #262a35;
+  }
+}
+
 .no-scrollbar {
   scrollbar-width: none;
 }

@@ -8,6 +8,7 @@ import {
   ROUND_TARGETS_PCT,
 } from '../data/stage1';
 import { getLeaderboard, getTeamTotal, TEAM_MAX_DAILY_SCORE } from '../utils/stats';
+import { hexToRgba } from '../utils/color';
 import Leaderboard from '../components/Leaderboard';
 import DataTable from '../components/DataTable';
 import TeamGoal from '../components/TeamGoal';
@@ -17,15 +18,17 @@ const STAGE_MAX = DAYS_PER_STAGE * TEAM_MAX_DAILY_SCORE;
 
 function StatTile({ label, value, sub, accent }) {
   return (
-    <div className="relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#161922] shadow-sm p-4">
-      <div className="absolute inset-x-0 top-0 h-1" style={{ backgroundColor: accent }} />
-      <div className="text-xs font-medium uppercase tracking-wide text-gray-400 dark:text-gray-500">
+    <div
+      className="tint-card rounded-xl border shadow-sm p-4"
+      style={{ '--tint-bg': hexToRgba(accent, 0.12), '--tint-border': hexToRgba(accent, 0.3) }}
+    >
+      <div className="text-xs font-semibold uppercase tracking-wide" style={{ color: accent }}>
         {label}
       </div>
       <div className="mt-1 text-xl font-bold text-gray-900 dark:text-gray-100 truncate">
         {value}
       </div>
-      {sub && <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{sub}</div>}
+      {sub && <div className="text-xs text-gray-600 dark:text-gray-400 mt-0.5">{sub}</div>}
     </div>
   );
 }

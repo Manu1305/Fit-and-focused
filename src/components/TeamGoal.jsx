@@ -7,6 +7,7 @@ import {
   STAGE_NAME,
 } from '../data/stage1';
 import { TEAM_MAX_DAILY_SCORE } from '../utils/stats';
+import { hexToRgba } from '../utils/color';
 
 const STAGE_MAX = DAYS_PER_STAGE * TEAM_MAX_DAILY_SCORE;
 const CHALLENGE_MAX = TOTAL_STAGES * STAGE_MAX;
@@ -17,9 +18,13 @@ const CHALLENGE_TARGET = Math.round(CHALLENGE_MAX * (OVERALL_TARGET_PCT / 100));
 function GoalCard({ label, sublabel, value, max, target, targetPctLabel, passed }) {
   const pct = Math.min(100, Math.round((value / max) * 100));
   const targetPct = Math.round((target / max) * 100);
+  const accent = passed === undefined ? '#3b82f6' : passed ? '#22c55e' : '#f59e0b';
 
   return (
-    <div className="rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50/60 dark:bg-white/2 p-4">
+    <div
+      className="tint-card rounded-xl border p-4"
+      style={{ '--tint-bg': hexToRgba(accent, 0.1), '--tint-border': hexToRgba(accent, 0.25) }}
+    >
       <div className="flex items-start justify-between gap-2">
         <div>
           <div className="text-sm font-medium text-gray-700 dark:text-gray-300">{label}</div>
