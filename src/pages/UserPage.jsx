@@ -12,6 +12,8 @@ import {
 } from 'recharts';
 import { stage1Data, USERS, HABITS, STAGE_NAME } from '../data/stage1';
 import { getLeaderboard, getUserDailySeries, MAX_DAILY_SCORE } from '../utils/stats';
+import HabitRadar from '../components/HabitRadar';
+import StreakGrid from '../components/StreakGrid';
 
 const ICON = { 1: '✅', 0: '❌', null: '➖' };
 
@@ -103,6 +105,11 @@ export default function UserPage() {
           </ComposedChart>
         </ResponsiveContainer>
       </section>
+
+      <div className="grid sm:grid-cols-2 gap-4 items-stretch">
+        <HabitRadar user={user} totals={row} />
+        <StreakGrid user={user} series={series} />
+      </div>
 
       <section>
         <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-3">
