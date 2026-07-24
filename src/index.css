@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
+/* Light theme only — dark: utilities are opt-in via a .dark class that is
+   never applied, so the app ignores the OS/browser color-scheme preference. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
 * {
@@ -15,13 +19,6 @@ body {
   color: #1f2430;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #0f1115;
-    color: #e5e7eb;
-  }
-}
-
 #root {
   min-height: 100svh;
 }
@@ -29,12 +26,6 @@ body {
 .tint-card {
   background-color: var(--tint-bg, #fff);
   border-color: var(--tint-border, #e5e7eb);
-}
-@media (prefers-color-scheme: dark) {
-  .tint-card {
-    background-color: #161922;
-    border-color: #262a35;
-  }
 }
 
 .no-scrollbar {
@@ -51,9 +42,4 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #c7cad1;
   border-radius: 8px;
-}
-@media (prefers-color-scheme: dark) {
-  ::-webkit-scrollbar-thumb {
-    background: #3a3f4b;
-  }
 }
