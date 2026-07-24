@@ -72,7 +72,7 @@ export default function RoundTracker() {
             </span>
             .
           </li>
-          <li>Top 2 players by individual total get 🥇🥈 on the leaderboard once the round ends.</li>
+          <li>Top 2 participants by individual total get 🥇🥈 on the leaderboard once the round ends.</li>
         </ul>
       </div>
     </div>

@@ -10,7 +10,7 @@ export default function ContributionPie({ rows }) {
         Contribution to team score
       </h2>
       <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
-        Each player's share of the {teamTotal} pt combined total in {STAGE_NAME.toLowerCase()}.
+        Each participant's share of the {teamTotal} pt combined total in {STAGE_NAME.toLowerCase()}.
       </p>
 
       <div className="flex flex-col items-center gap-4">

@@ -76,7 +76,7 @@ export default function TeamGoal({ stageTotal }) {
       <div className="mb-4">
         <h2 className="text-base font-semibold text-gray-900 dark:text-gray-100">Team goal</h2>
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-          Combined score across all 4 players — the target rises every round.
+          Combined score across all 4 participants — the target rises every round.
         </p>
       </div>
 

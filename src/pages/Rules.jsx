@@ -63,11 +63,12 @@ export default function Rules() {
           </li>
           <li>
             <span className="font-medium text-gray-800 dark:text-gray-200">Team goal:</span> add
-            up all 4 players' points — the target rises every round, so it gets harder to hit as
-            the challenge goes on.
+            up all 4 participants' points — the target rises every round, so it gets harder to hit
+            as the challenge goes on.
           </li>
           <li>
-            Open a player from the sidebar to see their day-by-day breakdown and progress chart.
+            Open a participant from the sidebar to see their day-by-day breakdown and progress
+            chart.
           </li>
         </ul>
       </section>

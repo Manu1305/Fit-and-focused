@@ -33,7 +33,7 @@ function NavLinks({ onNavigate }) {
       </NavLink>
 
       <p className="px-3 pt-4 pb-1 text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500">
-        Players
+        Participants
       </p>
       {USERS.map((user) => (
         <NavLink key={user.id} to={`/user/${user.id}`} className={linkClass} onClick={onNavigate}>
