@@ -65,7 +65,12 @@ export default function Home() {
           sub={`${DAYS_PER_STAGE} days each`}
           accent="#6366f1"
         />
-        <StatTile label="Leader" value={leader.name} sub={`${leader.total} pts`} accent={leader.color} />
+        <StatTile
+          label="Leading participant"
+          value={leader.name}
+          sub={`${leader.total} pts`}
+          accent={leader.color}
+        />
         <StatTile
           label="Team score"
           value={`${stagePct}%`}
